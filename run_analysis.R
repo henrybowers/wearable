@@ -1,5 +1,8 @@
 ## Getting and Cleaning Data - Project
+## Created by Henry Bowers
+## August 21, 2014
 
+## NOTE: before running script, change to directory containing this script, or comment out 
 setwd("~/Projects/Getting-Cleaning-Data/Project/wearable")
 
 library(data.table)
@@ -41,7 +44,7 @@ for(i in 1:nrow(featureNames)) {
         names(combinedData)[i+2]<-featureNames[i,2]
 }
 
-#use descriptive labels for activities
+#recode activity labels to be more descriptive
 #1 WALKING, 2 WALKING_UPSTAIRS,3 WALKING_DOWNSTAIRS, 4 SITTING,5 STANDING,6 LAYING
 
 combinedData<-mutate(combinedData,
@@ -61,7 +64,15 @@ coreData<-subset(combinedData[,v])
 #check subset
 names(coreData)
 
-###create independent tidy data set with the average of each variable for each activity and each subject 
+###create independent tidy data set with the mean of each variable by activity and subject 
 my_mean <- numcolwise(mean, na.rm = TRUE)
 featureMeans<-ddply(coreData, .(subjectID,activityLabel), my_mean)
 
+#make mean variables more accurately descriptive by appending "mean." to beginning of labels
+for(i in 3:ncol(featureMeans)) {names(featureMeans)[i]<-paste0("mean.",names(featureMeans[i]))}
+        
+#export tidy data set to text file
+write.table(featureMeans,"tidydata-hmb.txt",row.name=FALSE)
+
+#verify table write
+tidy<-read.table("tidydata-hmb.txt",header=TRUE)
