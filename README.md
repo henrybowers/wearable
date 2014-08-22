@@ -9,7 +9,7 @@ This document describes the run_analysis.R script and provides a code book for t
 
 # run_analysis.R script explanation
 
-This script creates a tidy data set by merging and transforming raw data included in [Human Activity Recognition Using Smartphones Dataset Version 1.0.](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "Title").
+This script creates a tidy data set by merging and transforming raw data included in [Human Activity Recognition Using Smartphones Dataset Version 1.0.](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
 The tidy data set is exported to tidydata-hmb.txt.
 
