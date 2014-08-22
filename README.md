@@ -22,17 +22,17 @@ The files it uses from the raw data set are activity_labels.txt, features.txt, x
 NOTE: before running script, change setwd() on line 4 to directory containing script, or comment out the line
 
 ## Processing
-The script performs the following steps: 
-1. load test data
-2. load train data
-3. provide descriptive labels for subject and activity vectors
-4. consolidate train and test data into a single table
-5. provide descriptive labels for feature columns
-6. recode activity labels to be more descriptive
-7. retain only mean and std feature variables, the first 6 feature vectors of each feature category
-8. create independent tidy data set with the mean of each variable by activity and subject
-9. make mean vectors more accurately descriptive by appending "mean." to beginning of labels
-10. export tidy data set to text file
+The script performs the following steps:   
+1. load test data  
+2. load train data  
+3. provide descriptive labels for subject and activity vectors  
+4. consolidate train and test data into a single table  
+5. provide descriptive labels for feature columns  
+6. recode activity labels to be more descriptive  
+7. retain only mean and std feature variables, the first 6 feature vectors of each feature category  
+8. create independent tidy data set with the mean of each variable by activity and subject  
+9. make mean vectors more accurately descriptive by appending "mean." to beginning of labels  
+10. export tidy data set to text file  
 
 # Code Book for run_analysis.R
 
